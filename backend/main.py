@@ -4,11 +4,22 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"message": "Job Tracker API fonctionne"}
+    return {
+        "application": "Job Tracker",
+        "status": "running"
+    }
 
 @app.get("/candidatures")
 def candidatures():
     return [
-        {"entreprise": "Capgemini", "statut": "Envoyée"},
-        {"entreprise": "OVH", "statut": "Entretien"}
+        {
+            "entreprise": "Capgemini",
+            "poste": "Technicien Support",
+            "statut": "Envoyee"
+        },
+        {
+            "entreprise": "OVHcloud",
+            "poste": "Technicien Systeme",
+            "statut": "Entretien"
+        }
     ]
